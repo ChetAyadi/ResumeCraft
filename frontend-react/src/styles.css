@@ -1,0 +1,585 @@
+/* Google Fonts Import - Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+:root {
+    --primary-color: #3b82f6;      /* Vibrant Blue */
+    --primary-hover: #2563eb;
+    --secondary-color: #0f172a;    /* Dark Header Slate */
+    --accent-color: #0d9488;       /* Teal */
+    --bg-dark: #080c14;            /* Outer Space Black */
+    --card-bg: #111827;            /* Carbon Dark */
+    --input-bg: #1f2937;           /* Slate Input */
+    --text-main: #f3f4f6;          /* Bright White-Gray */
+    --text-muted: #9ca3af;         /* Soft Gray */
+    --border-color: #374151;       /* Dark border line */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-dark) !important;
+    color: var(--text-main) !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Card Styling - Dark Glassmorphism style */
+.card-premium {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Form Controls for Dark Theme */
+.form-control, .form-select {
+    background-color: var(--input-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+.form-select option, select option {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--input-bg) !important;
+    border-color: var(--accent-color) !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 148, 136, 0.25) !important;
+}
+
+.form-control::placeholder {
+    color: #6b7280 !important;
+}
+
+/* Accordion adjustments for Dark Theme */
+.accordion-item {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.accordion-button {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--input-bg) !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
+.accordion-button::after {
+    filter: invert(1) brightness(2); /* turn dark arrow white */
+}
+
+.accordion-body {
+    background-color: var(--card-bg) !important;
+}
+
+/* Navbar overrides */
+.navbar-custom {
+    background-color: var(--card-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.navbar-brand-custom {
+    font-weight: 700;
+    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    color: var(--text-muted) !important;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: #ffffff !important;
+}
+
+/* Button overrides */
+.btn-primary-custom {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+}
+
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+    background-color: var(--primary-hover) !important;
+    border-color: var(--primary-hover) !important;
+    color: #ffffff !important;
+}
+
+.btn-outline-custom {
+    color: #ffffff !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: transparent !important;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+}
+
+.btn-outline-custom:hover {
+    background-color: var(--input-bg) !important;
+    color: #ffffff !important;
+}
+
+.preview-container {
+    position: sticky;
+    top: 2rem;
+    height: calc(100vh - 6rem) !important;
+    max-height: calc(100vh - 6rem) !important;
+    overflow: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: flex-start;
+    background-color: #0c101b !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.preview-container::-webkit-scrollbar {
+    display: none !important;
+}
+
+/* Physical sheet representing printing dimensions on screen */
+.resume-sheet {
+    background: #ffffff !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border: 1px solid #ffffff;
+    width: 210mm;
+    min-width: 210mm;
+    min-height: 297mm;
+    padding: 20mm;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 10.5pt;
+    line-height: 1.5;
+    color: #27272a;
+    transform-origin: top center;
+}
+
+.resume-sheet h2, .resume-sheet h5 {
+    color: #090d16 !important;
+}
+
+.resume-sheet a {
+    color: #2563eb !important;
+    text-decoration: none;
+}
+
+.resume-sheet .text-muted {
+    color: #71717a !important;
+}
+
+.resume-sheet .text-secondary {
+    color: #3f3f46 !important;
+}
+
+.resume-sheet.theme-modern {
+    border-top: 8px solid var(--accent-color, #2563eb);
+}
+
+.resume-sheet.theme-professional {
+    border-top: 8px solid #0f172a;
+}
+
+.resume-sheet.theme-creative {
+    border-top: 8px solid #0d9488;
+}
+.resume-sheet.theme-creative h6 {
+    border-left: 4px solid var(--accent-color, #0d9488);
+    padding-left: 8px;
+}
+
+.resume-sheet.theme-minimal {
+    border-top: 2px solid #cbd5e1;
+}
+
+/* Scorer circles */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    font-weight: 800;
+    margin: 0 auto;
+    border: 8px solid var(--border-color);
+    background-color: var(--input-bg);
+}
+
+.score-high {
+    border-color: #10b981 !important;
+    color: #10b981 !important;
+}
+
+.score-medium {
+    border-color: #f59e0b !important;
+    color: #f59e0b !important;
+}
+
+.score-low {
+    border-color: #ef4444 !important;
+    color: #ef4444 !important;
+}
+
+/* Modals */
+.modal-content {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) brightness(2);
+}
+
+.nav-tabs .nav-link {
+    color: var(--text-muted) !important;
+    border: none;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border-bottom-color: var(--primary-color) !important;
+}
+
+/* Custom layout helpers */
+.text-xs { font-size: 0.75rem !important; }
+.text-sm { font-size: 0.875rem !important; }
+.btn-xs { padding: 0.2rem 0.5rem; font-size: 0.75rem; border-radius: 6px; }
+.bg-teal { background-color: var(--accent-color) !important; }
+.border-light { border-color: var(--border-color) !important; }
+.bg-light { background-color: var(--input-bg) !important; }
+.list-group-item {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+
+/* Dark theme global overrides for Bootstrap classes */
+.bg-white {
+    background-color: var(--card-bg) !important;
+}
+
+.text-dark {
+    color: #ffffff !important;
+}
+
+.translate-middle.bg-white {
+    background-color: var(--card-bg) !important;
+}
+
+footer.bg-white {
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+}
+
+.border, .border-bottom, .border-top, .border-start, .border-end {
+    border-color: var(--border-color) !important;
+}
+
+.list-group {
+    border-color: var(--border-color) !important;
+}
+
+.table {
+    --bs-table-bg: var(--card-bg) !important;
+    --bs-table-color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+.table th, .table td {
+    color: var(--text-main) !important;
+}
+
+/* Scoped text colors: force all text outside the white resume page to use light theme colors */
+.alert {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-main) !important;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.15) !important;
+    border-color: rgba(16, 185, 129, 0.3) !important;
+    color: #10b981 !important;
+}
+.alert-success * {
+    color: #10b981 !important;
+}
+
+.alert-danger {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+}
+.alert-danger * {
+    color: #ef4444 !important;
+}
+
+.alert-info {
+    background-color: rgba(59, 130, 246, 0.15) !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+    color: #3b82f6 !important;
+}
+.alert-info * {
+    color: #3b82f6 !important;
+}
+
+.alert-warning {
+    background-color: rgba(245, 158, 11, 0.15) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+    color: #f59e0b !important;
+}
+.alert-warning * {
+    color: #f59e0b !important;
+}
+
+h1:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+h2:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+h3:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+h4:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+h5:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+h6:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+.accordion-button:not(.resume-sheet *),
+.nav-link:not(.resume-sheet *) {
+    color: #ffffff !important;
+}
+
+p:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+span:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *):not(.badge):not(.spinner-border),
+label:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+li:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+small:not(.resume-sheet *):not(.alert *):not(.badge *):not(.btn *),
+.form-text:not(.resume-sheet *):not(.alert *) {
+    color: var(--text-main) !important;
+}
+
+.text-muted:not(.resume-sheet *):not(.alert *):not(.btn *) {
+    color: var(--text-muted) !important;
+}
+
+/* Preserve original white-theme helper colors inside the resume sheet to prevent dark-mode bleed */
+.resume-sheet .bg-light {
+    background-color: #f1f5f9 !important;
+}
+.resume-sheet .border-light {
+    border-color: #cbd5e1 !important;
+}
+.resume-sheet .bg-white {
+    background-color: #ffffff !important;
+}
+.resume-sheet .text-dark {
+    color: #0f172a !important;
+}
+
+/* Floating Chatbot Bubble Icon */
+.chatbot-bubble {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1050;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbot-bubble:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 40px rgba(59, 130, 246, 0.6);
+}
+
+.chatbot-bubble i {
+    font-size: 1.75rem;
+    color: #ffffff !important;
+}
+
+/* Glassmorphic Chatbot Window Pane */
+.chatbot-window {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 380px;
+    height: 520px;
+    max-height: calc(100vh - 130px);
+    max-width: calc(100vw - 50px);
+    border-radius: 16px;
+    background: rgba(17, 24, 39, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    display: flex;
+    flex-direction: column;
+    z-index: 1050;
+    overflow: hidden;
+}
+
+/* Chat Header */
+.chatbot-header {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(90deg, rgba(31, 41, 55, 0.6), rgba(17, 24, 39, 0.8));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-header h6 {
+    margin: 0 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.chatbot-header button {
+    background: none;
+    border: none;
+    color: var(--text-muted) !important;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Chat Messages Box */
+.chatbot-messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chatbot-messages::-webkit-scrollbar {
+    width: 6px;
+}
+.chatbot-messages::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Message Bubbles */
+.chat-msg {
+    max-width: 85%;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    word-break: break-word;
+}
+.chat-msg.user {
+    align-self: flex-end;
+    background: var(--primary-color) !important;
+    color: #ffffff !important;
+    border-bottom-right-radius: 2px;
+}
+.chat-msg.ai {
+    align-self: flex-start;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-main) !important;
+    border-bottom-left-radius: 2px;
+}
+
+/* Input Form Box */
+.chatbot-input-container {
+    padding: 0.85rem 1.25rem;
+    background: rgba(31, 41, 55, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbot-form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.chatbot-input {
+    flex-grow: 1;
+    background: rgba(17, 24, 39, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.chatbot-send {
+    background: var(--primary-color);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #ffffff !important;
+}
+
+/* Dashboard List Scrollable Container */
+#resumesList, #scansList {
+    max-height: 260px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+#resumesList::-webkit-scrollbar, #scansList::-webkit-scrollbar {
+    width: 6px;
+}
+#resumesList::-webkit-scrollbar-thumb, #scansList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Print CSS */
+@media print {
+    @page { size: A4; margin: 0; }
+    body { background: white !important; color: black !important; padding: 0 !important; margin: 0 !important; }
+    nav, .no-print, .chatbot-bubble, .chatbot-window { display: none !important; }
+    .preview-container { padding: 0 !important; border: none !important; background: white !important; }
+    .resume-sheet { width: 210mm !important; min-height: 297mm !important; padding: 20mm !important; box-shadow: none !important; border: none !important; margin: 0 !important; }
+}
